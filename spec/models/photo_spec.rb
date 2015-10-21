@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User do
-  it { should have_many :photos }
+describe Photo do
+  it { should belong_to :user }
   it { should have_many :tags }
 end
