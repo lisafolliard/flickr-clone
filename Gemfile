@@ -17,7 +17,7 @@ gem 'geocoder'
 gem "paperclip", "~> 4.3"
 gem 'devise'
 # gem 'carrierwave', '0.10.0'
-# gem 'mini_magick', '3.8.0'
+gem 'mini_magick'
 # gem 'fog', '1.26.0'
 
 group :production do
