@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [ :show, :edit, :destroy ]
-
+  before_action :correct_user, only: [ :edit, :update, :destroy ]
 
   def index
     @photos = Photo.order(created_at: :desc)
@@ -15,7 +15,9 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
+    @photo.user = current_user
     if @photo.save
+      notice: "Successfully added photo"
       redirect_to @photo
     else
       render :new
@@ -26,6 +28,7 @@ class PhotosController < ApplicationController
   end
 
   def update
+
   end
 
   def destroy
@@ -36,7 +39,6 @@ class PhotosController < ApplicationController
     def set_photo
       @photo = Photo.find(params[:id])
     end
-
 
     def photo_params
       params.require(:photo).permit(:caption, :image)
