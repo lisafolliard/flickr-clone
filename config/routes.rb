@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
 
 
-    resources :photos
 
+  # User profile page
+  resources :users, only: [:show]
 
-  # resources :photos do
-  #   resources :comments
-  # end
-
+  resources :photos
 end

@@ -17,8 +17,8 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     @photo.user = current_user
     if @photo.save
-      notice: "Successfully added photo"
-      redirect_to @photo
+      # notice: "Successfully added photo"
+      redirect_to user_path(current_user)
     else
       render :new
     end
