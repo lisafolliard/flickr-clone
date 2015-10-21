@@ -1,3 +1,7 @@
+<div class="container-fluid text-center">
+
 <%= image_tag @photo.image.url %>
-<%= image_tag @photo.image.url(:medium) %>
-<%= image_tag @photo.image.url(:thumb) %>
+<p>
+  <%= link_to "Tag a user?", new_tag_path(@photo) %>
+</p>
+</div>

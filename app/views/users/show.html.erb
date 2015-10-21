@@ -9,5 +9,7 @@
 <br>
 
 <% @photos.each do |photo| %>
-  <%= image_tag photo.image.url %>
+  <%= link_to photo_path(photo) do %>
+    <%= image_tag photo.image.url %>
+  <% end %>
 <% end %>
