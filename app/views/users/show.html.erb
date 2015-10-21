@@ -1,5 +1,9 @@
 <div class= "profile-header">
-  <p>Hey <%=@user.name %> ! <span class="pull-right"><%= link_to "Add a picture", new_photo_path, class:"btn btn-default" %></span></p>
+  <p><%=@user.name %>
+  <% if owns? %>
+    <span class="pull-right"><%= link_to "Add a picture", new_photo_path, class:"btn btn-default" %></span>
+    <% end %>
+    </p>
 </div>
 <hr>
 <br>

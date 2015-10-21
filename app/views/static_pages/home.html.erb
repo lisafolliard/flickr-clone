@@ -1,2 +1,33 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="jumbotron main-jumbotron">
+
+  <div class="row catch-line-container">
+    <h1 class="catch-line"> The last big photo thing. </h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <% if !current_user %>
+        <%= link_to new_user_registration_path do %>
+          <button class=" btn-lg btn btn-warning">Sign Up</button>
+          <% end %>
+      <% end %>
+        <%= link_to photos_path do %>
+          <button class=" btn-lg btn btn-primary">Explore</button>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="featured-container" class="container-fluid">
+  <% @photos.each do |photo| %>
+    <div class="col-md-4">
+      <%= image_tag photo.image.url %><br>
+      <span>
+        <%= gravatar_for(photo.user) %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+<div id="about-section" class="container-fluid">
+
+</div>

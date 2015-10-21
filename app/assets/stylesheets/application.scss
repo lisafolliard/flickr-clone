@@ -1,8 +1,76 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
 
+body, html {
+  width: 100% !important;
+  font-family: 'Lato', sans-serif;
+}
 .profile-header {
   text-align: left;
   font-size: 3em;
+}
+
+.gravatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.main-jumbotron{
+  background-image: url("jumbotron_image.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-left:-5%;
+  padding :0px;
+  min-height: 800px;
+  width: 110% !important;
+  margin-top: -12%;
+
+  .catch-line-container {
+    margin-top: 8% !important;
+    padding-top: 10%;
+  }
+  .row {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .col-xs-12 {
+    margin-top: 1%;
+  }
+  .btn-lg {
+    padding: .5% 2%;
+  }
+}
+
+.jumbotron h1 {
+  font-size: 6em;
+  text-align:center;
+  color: white;
+}
+.container-fluid {
+  width: 100% !important;
+}
+
+#featured-container {
+  margin: auto;
+  .col-md-4 {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+#about-section {
+
+  min-height: 500px;
+  width: 100% !important;
+}
+
+.title-container {
+  margin-bottom: 3%;
+  .title {
+    font-size: 5em;
+  }
 }
