@@ -1,5 +1,19 @@
 require 'rails_helper'
 
+def log_in(user)
+  visit root_url
+  click_link 'Login'
+  fill_in 'Email', with: user.email
+  fill_in 'Password', with: user.password
+  click_button 'Log in'
+end
+
+def log_out(user)
+  visit root_url
+  click_link 'Logout'
+  expect(page).to have_content("Login")
+end
+
 describe "authorizations" do
 
   it "allows the user to sign up" do
@@ -21,12 +35,15 @@ describe "authorizations" do
     visit root_url
     expect(page).to have_content "Login"
     expect(page).to_not have_content "Logout"
-    click_link 'Login'
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log in"
+    log_in user
     expect(page).to_not have_content("errors")
     expect(page).to have_content("Logout")
   end
 
+  it "allows a user to log out" do
+    user = FactoryGirl.create(:user)
+    visit root_url
+    log_in user
+    log_out user
+  end
 end
