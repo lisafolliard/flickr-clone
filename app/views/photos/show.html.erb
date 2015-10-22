@@ -1,6 +1,10 @@
 <div class="container-fluid text-center">
 
+<center>Photo by: <%= @photo.user.name %></center>
+<br>
 <%= image_tag @photo.image.url %>
+<br>
+<br>
 <%= render :partial => "layouts/tag_form", locals: { photo: @photo } %>
 </div>
 

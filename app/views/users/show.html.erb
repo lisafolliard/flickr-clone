@@ -13,5 +13,21 @@
     <%= render :partial => "layouts/tag_form", locals: { photo: photo } %>
 <% end %>
 
+<div class="container text-center">
+  <h3>Photos of <%= @user.name %></h3>
+
+
+  <ul>
+    <% @tagged_in_photos.each do |t| %>
+      <%= link_to photo_path(Photo.find(t.photo_id)) do %>
+        <%= image_tag Photo.find(t.photo_id).image.url(:thumb) %>
+      <% end %>
+
+    <% end %>
+  </ul>
+</div>
+
+<!-- thumb -->
+
 <!-- f.select :permission, [ ["Read Only", "read"], ["IP Voice Telephony", "ip_voice"], ["IP Video Telephony", "ip_video_telephony"], ["Enterprise Gateways", "enterprise_gateways"], ["Consumer ATAs", "consumer_atas"], ["IP PBX", "ip_pbx"], ["Master of All", "all"] ], {prompt: "Select Permission Level"}, {:multiple => true, class: "input-lg"}  -->
 <!-- f.collection_select :score_id, Score.all, :id, :name -->

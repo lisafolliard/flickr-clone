@@ -4,4 +4,6 @@ class Tag < ActiveRecord::Base
 
   # is a label ex mountain that you can return
   belongs_to :tagged_photo, class_name: Photo, foreign_key: :photo_id
+
+  validates :tagged_user, uniqueness: true;
 end
