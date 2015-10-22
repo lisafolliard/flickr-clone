@@ -1,0 +1,27 @@
+Is the Github documentation - commits and README - thorough and descriptive?
+  - git commits look great!
+  - need an updated and customized README
+
+Is there good spec coverage?
+  - Yes.
+
+Do all specs pass?
+  - Yes
+
+Is the application logic clear and easy to navigate?
+  - Looks good, easy to follow the logic
+
+Is the site user-friendly?
+  - Clear navigation, nice layout
+
+Are there opportunities for refactoring?
+  - Possibly remove unused controller actions
+  
+What features stand out?
+  - Profile route on navbar
+
+What features could be improved?
+  - Might reconsider having all photos display in only one place
+
+Do you have any additional constructive criticism or positive feedback to share?
+  - Nice, clean basic site
