@@ -9,7 +9,7 @@
 </div>
 
 
-<span class="lead">
+<div class="lead" id="tagged-users-div">
 <% @photo.tagged_users.each do |tagged_user| %>
   <%= link_to user_path(tagged_user) do %>
     <%= tagged_user.name %>
@@ -18,4 +18,4 @@
       <%= fa_icon "trash-o" %><br>
     <% end %>
   <% end %>
-</span>
+</div>
