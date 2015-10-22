@@ -1,6 +1,8 @@
-User.create!(
-  name: "user",
-  email: "user@example.com",
-  password: "password",
-  password_confirmation: "password",
-)
+10.times do |n|
+  User.create!(
+    name: "user#{n}",
+    email: "user#{n}@example.com",
+    password: "password",
+    password_confirmation: "password",
+  )
+end

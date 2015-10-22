@@ -45,6 +45,10 @@ body, html {
   }
 }
 
+.btn-action {
+  padding: 1% 5% ;
+}
+
 .jumbotron h1 {
   font-size: 6em;
   text-align:center;
@@ -72,5 +76,14 @@ body, html {
   margin-bottom: 3%;
   .title {
     font-size: 5em;
+  }
+}
+
+
+
+.well {
+  form {
+    margin: auto;
+    width: 50%;
   }
 }

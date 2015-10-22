@@ -21,9 +21,6 @@
   <% @photos.each do |photo| %>
     <div class="col-md-4">
       <%= image_tag photo.image.url %><br>
-      <span>
-        <%= gravatar_for(photo.user) %>
-      </span>
     </div>
   <% end %>
 </div>
