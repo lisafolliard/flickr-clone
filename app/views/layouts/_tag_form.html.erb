@@ -1,5 +1,7 @@
 <%= form_for(Tag.new, remote: true) do |f| %>
   <%= f.hidden_field(:photo_id, value: photo.id) %>
-  <%= f.collection_select :user_id, User.all, :id, :name %>
-  <%= f.submit "Finished Tagging" %>
+  <div class ="form-group">
+  <%= f.collection_select :user_id, User.all, :id, :name, class: "form-control" %>
+  </div>
+  <%= f.submit "Finished Tagging", class: "btn btn-default" %>
 <% end %>
