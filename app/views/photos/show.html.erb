@@ -1,7 +1,17 @@
 <div class="container-fluid text-center">
 
 <%= image_tag @photo.image.url %>
-<p>
-  <%= link_to "Tag a user?", new_tag_path(@photo) %>
-</p>
+<%= render :partial => "layouts/tag_form", locals: { photo: @photo } %>
 </div>
+
+
+<span class="lead">
+<% @photo.tagged_users.each do |tagged_user| %>
+  <%= link_to user_path(tagged_user) do %>
+    <%= tagged_user.name %>
+  <% end %>
+    <%= link_to tag_path( tagged_user.tags.find_by(photo_id: @photo) ), data: { confirm: "are you sure?", method: "delete"} do %>
+      <%= fa_icon "trash-o" %><br>
+    <% end %>
+  <% end %>
+</span>

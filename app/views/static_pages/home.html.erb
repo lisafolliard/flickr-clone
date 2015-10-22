@@ -20,7 +20,9 @@
 <div id="featured-container" class="container-fluid">
   <% @photos.each do |photo| %>
     <div class="col-md-4">
-      <%= image_tag photo.image.url %><br>
+      <%= link_to photo_path(photo) do %>
+        <%= image_tag photo.image.url %><br>
+      <% end %>
     </div>
   <% end %>
 </div>

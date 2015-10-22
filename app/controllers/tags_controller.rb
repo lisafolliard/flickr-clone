@@ -16,9 +16,10 @@ class TagsController < ApplicationController
     @tag = Tag.new
     @tag.tagged_photo = @photo
     @tag.tagged_user = @user
-    if @tag.save
-      redirect_to root_path
-    else
+    respond_to do |format|
+      if @tag.save
+        format.js
+      end
     end
   end
 
@@ -29,6 +30,10 @@ class TagsController < ApplicationController
   end
 
   def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+    redirect_to :back
+
   end
 
   private

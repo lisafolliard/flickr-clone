@@ -10,14 +10,7 @@
 
 <% @photos.each do |photo| %>
     <%= image_tag photo.image.url %>
-
-    <%= form_for(Tag.new, remote: true) do |f| %>
-      <%= f.hidden_field(:photo_id, value: photo.id) %>
-      <%= f.collection_select :user_id, User.all, :id, :name %>
-
-      <%= f.submit "Finished Tagging" %>
-    <% end %>
-
+    <%= render :partial => "layouts/tag_form", locals: { photo: photo } %>
 <% end %>
 
 <!-- f.select :permission, [ ["Read Only", "read"], ["IP Voice Telephony", "ip_voice"], ["IP Video Telephony", "ip_video_telephony"], ["Enterprise Gateways", "enterprise_gateways"], ["Consumer ATAs", "consumer_atas"], ["IP PBX", "ip_pbx"], ["Master of All", "all"] ], {prompt: "Select Permission Level"}, {:multiple => true, class: "input-lg"}  -->
